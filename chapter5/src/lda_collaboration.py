@@ -1,10 +1,15 @@
-from util.models import RecommendResult, Dataset
-from src.base_recommender import BaseRecommender
-from collections import defaultdict
-import numpy as np
-import gensim
 import logging
+
+from collections import defaultdict
+
+import gensim
+import numpy as np
+
 from gensim.corpora.dictionary import Dictionary
+
+from src.base_recommender import BaseRecommender
+from util.models import Dataset, RecommendResult
+
 
 np.random.seed(0)
 

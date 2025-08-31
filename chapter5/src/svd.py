@@ -1,8 +1,11 @@
-from util.models import RecommendResult, Dataset
-from src.base_recommender import BaseRecommender
 from collections import defaultdict
-import scipy
+
 import numpy as np
+import scipy
+
+from src.base_recommender import BaseRecommender
+from util.models import Dataset, RecommendResult
+
 
 np.random.seed(0)
 

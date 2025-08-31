@@ -1,10 +1,12 @@
-from util.models import RecommendResult, Dataset
-from src.base_recommender import BaseRecommender
 from collections import defaultdict
+
 import numpy as np
 
-from surprise import KNNWithMeans, Reader
-from surprise import Dataset as SurpriseDataset
+from surprise import Dataset as SurpriseDataset, KNNWithMeans, Reader
+
+from src.base_recommender import BaseRecommender
+from util.models import Dataset, RecommendResult
+
 
 np.random.seed(0)
 

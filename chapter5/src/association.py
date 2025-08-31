@@ -1,9 +1,12 @@
-from util.models import RecommendResult, Dataset
-from src.base_recommender import BaseRecommender
-from collections import defaultdict, Counter
+from collections import Counter, defaultdict
+
 import numpy as np
-from mlxtend.frequent_patterns import apriori
-from mlxtend.frequent_patterns import association_rules
+
+from mlxtend.frequent_patterns import apriori, association_rules
+
+from src.base_recommender import BaseRecommender
+from util.models import Dataset, RecommendResult
+
 
 np.random.seed(0)
 

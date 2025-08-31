@@ -1,6 +1,8 @@
 import dataclasses
-import pandas as pd
+
 from typing import Dict, List
+
+import pandas as pd
 
 
 @dataclasses.dataclass(frozen=True)
