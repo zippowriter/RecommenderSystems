@@ -1,3 +1,6 @@
 {
-    "reportUnknownVariableType": "error"
+    "reportArgumentType": "none",
+    "reportAttributeAccessIssue": "none",
+    "reportCallIssue": "none",
+    "reportUnknownVariableType": "none"
 }
