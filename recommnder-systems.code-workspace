@@ -12,5 +12,14 @@
             "path": "chapter7",
             "name": "chapter7"
         }
-    ]
+    ],
+    "settings": {
+        "editor.formatOnSave": true,
+        "[toml]": {
+            "editor.defaultFormatter": "tombi-toml.tombi"
+        },
+        "[python]": {
+            "editor.defaultFormatter": "charliermarsh.ruff"
+        }
+    }
 }
