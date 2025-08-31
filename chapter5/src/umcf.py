@@ -11,13 +11,12 @@ np.random.seed(0)
 
 class UMCFRecommender(BaseRecommender):
     def recommend(self, dataset: Dataset, **kwargs) -> RecommendResult:
-
         # ピアソンの相関係数
         def peason_coefficient(u: np.ndarray, v: np.ndarray) -> float:
             u_diff = u - np.mean(u)
             v_diff = v - np.mean(v)
             numerator = np.dot(u_diff, v_diff)
-            denominator = np.sqrt(sum(u_diff ** 2)) * np.sqrt(sum(v_diff ** 2))
+            denominator = np.sqrt(sum(u_diff**2)) * np.sqrt(sum(v_diff**2))
             if denominator == 0:
                 return 0.0
             return numerator / denominator
@@ -34,7 +33,6 @@ class UMCFRecommender(BaseRecommender):
         pred_user2items = defaultdict(list)
 
         if is_naive:
-
             # 予測対象のユーザーID
             test_users = movie_rating_predict.user_id.unique()
 
@@ -108,7 +106,10 @@ class UMCFRecommender(BaseRecommender):
                 dataset.train[["user_id", "movie_id", "rating"]], reader
             ).build_full_trainset()
 
-            sim_options = {"name": "pearson", "user_based": True}  # 類似度を計算する方法を指定する  # False にするとアイテムベースとなる
+            sim_options = {
+                "name": "pearson",
+                "user_based": True,
+            }  # 類似度を計算する方法を指定する  # False にするとアイテムベースとなる
             knn = KNNWithMeans(k=30, min_k=1, sim_options=sim_options)
             knn.fit(data_train)
 

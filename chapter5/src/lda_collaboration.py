@@ -26,7 +26,10 @@ class LDACollaborationRecommender(BaseRecommender):
         common_corpus = [common_dictionary.doc2bow(text) for text in lda_data]
 
         lda_model = gensim.models.LdaModel(
-            common_corpus, id2word=common_dictionary, num_topics=factors, passes=n_epochs
+            common_corpus,
+            id2word=common_dictionary,
+            num_topics=factors,
+            passes=n_epochs,
         )
         lda_topics = lda_model[common_corpus]
 

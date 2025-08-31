@@ -39,7 +39,10 @@ class IMFRecommender(BaseRecommender):
 
         # モデルの初期化
         model = implicit.als.AlternatingLeastSquares(
-            factors=factors, iterations=n_epochs, calculate_training_loss=True, random_state=1
+            factors=factors,
+            iterations=n_epochs,
+            calculate_training_loss=True,
+            random_state=1,
         )
 
         # 学習

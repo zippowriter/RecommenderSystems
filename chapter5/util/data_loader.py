@@ -4,7 +4,12 @@ from util.models import Dataset
 
 
 class DataLoader:
-    def __init__(self, num_users: int = 1000, num_test_items: int = 5, data_path: str = "../data/ml-10M100K/"):
+    def __init__(
+        self,
+        num_users: int = 1000,
+        num_test_items: int = 5,
+        data_path: str = "../data/ml-10M100K/",
+    ):
         self.num_users = num_users
         self.num_test_items = num_test_items
         self.data_path = data_path
@@ -34,7 +39,11 @@ class DataLoader:
         # movie_idとタイトル名のみ使用
         m_cols = ["movie_id", "title", "genre"]
         movies = pd.read_csv(
-            os.path.join(self.data_path, "movies.dat"), names=m_cols, sep="::", encoding="latin-1", engine="python"
+            os.path.join(self.data_path, "movies.dat"),
+            names=m_cols,
+            sep="::",
+            encoding="latin-1",
+            engine="python",
         )
         # genreをlist形式で保持する
         movies["genre"] = movies.genre.apply(lambda x: x.split("|"))
@@ -42,7 +51,10 @@ class DataLoader:
         # ユーザが付与した映画のタグ情報の読み込み
         t_cols = ["user_id", "movie_id", "tag", "timestamp"]
         user_tagged_movies = pd.read_csv(
-            os.path.join(self.data_path, "tags.dat"), names=t_cols, sep="::", engine="python"
+            os.path.join(self.data_path, "tags.dat"),
+            names=t_cols,
+            sep="::",
+            engine="python",
         )
         # tagを小文字にする
         user_tagged_movies["tag"] = user_tagged_movies["tag"].str.lower()
@@ -53,7 +65,12 @@ class DataLoader:
 
         # 評価データの読み込み
         r_cols = ["user_id", "movie_id", "rating", "timestamp"]
-        ratings = pd.read_csv(os.path.join(self.data_path, "ratings.dat"), names=r_cols, sep="::", engine="python")
+        ratings = pd.read_csv(
+            os.path.join(self.data_path, "ratings.dat"),
+            names=r_cols,
+            sep="::",
+            engine="python",
+        )
 
         # user数をnum_usersに絞る
         valid_user_ids = sorted(ratings.user_id.unique())[: self.num_users]

@@ -36,7 +36,10 @@ class MetricCalculator:
         return np.sqrt(mean_squared_error(true_rating, pred_rating))
 
     def _calc_recall_at_k(
-        self, true_user2items: Dict[int, List[int]], pred_user2items: Dict[int, List[int]], k: int
+        self,
+        true_user2items: Dict[int, List[int]],
+        pred_user2items: Dict[int, List[int]],
+        k: int,
     ) -> float:
         scores = []
         # テストデータに存在する各ユーザーのrecall@kを計算
@@ -46,7 +49,10 @@ class MetricCalculator:
         return np.mean(scores)
 
     def _calc_precision_at_k(
-        self, true_user2items: Dict[int, List[int]], pred_user2items: Dict[int, List[int]], k: int
+        self,
+        true_user2items: Dict[int, List[int]],
+        pred_user2items: Dict[int, List[int]],
+        k: int,
     ) -> float:
         scores = []
         # テストデータに存在する各ユーザーのprecision@kを計算

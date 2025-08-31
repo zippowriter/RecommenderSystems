@@ -1,0 +1,7 @@
+indent-width = 4
+line-length = 120
+
+[lint.isort]
+combine-as-imports = true
+lines-between-types = 1
+lines-after-imports = 2

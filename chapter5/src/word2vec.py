@@ -65,7 +65,7 @@ class Word2vecRecommender(BaseRecommender):
         movie_vectors = np.array(movie_vectors)
 
         # 正規化したベクトル
-        sum_vec = np.sqrt(np.sum(movie_vectors ** 2, axis=1))
+        sum_vec = np.sqrt(np.sum(movie_vectors**2, axis=1))
         movie_norm_vectors = movie_vectors / sum_vec.reshape((-1, 1))
 
         def find_similar_items(vec, evaluated_movie_ids, topn=10):
