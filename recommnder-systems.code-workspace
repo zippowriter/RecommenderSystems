@@ -15,11 +15,15 @@
     ],
     "settings": {
         "editor.formatOnSave": true,
+        "cursorpyright.analysis.typeCheckingMode": "basic",
         "[toml]": {
             "editor.defaultFormatter": "tombi-toml.tombi"
         },
         "[python]": {
-            "editor.defaultFormatter": "charliermarsh.ruff"
-        }
+            "editor.defaultFormatter": "charliermarsh.ruff",
+            "editor.codeActionsOnSave": {
+                "source.organizeImports.ruff": "explicit"
+            }
+        },
     }
 }
