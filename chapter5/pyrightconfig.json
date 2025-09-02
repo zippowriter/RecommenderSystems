@@ -2,5 +2,6 @@
     "reportArgumentType": "none",
     "reportAttributeAccessIssue": "none",
     "reportCallIssue": "none",
-    "reportUnknownVariableType": "none"
+    "reportUnknownVariableType": "none",
+    "reportPossiblyUnboundVariable": "none"
 }
