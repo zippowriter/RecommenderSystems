@@ -17,8 +17,6 @@ class RFRecommender(BaseRecommender):
     def recommend(self, dataset: Dataset, **kwargs) -> RecommendResult:
         # 評価値をユーザー×映画の行列に変換。欠損値は、平均値または０で穴埋めする
         user_movie_matrix = dataset.train.pivot(index="user_id", columns="movie_id", values="rating")
-        user_id2index = dict(zip(user_movie_matrix.index, range(len(user_movie_matrix.index))))
-        movie_id2index = dict(zip(user_movie_matrix.columns, range(len(user_movie_matrix.columns))))
 
         # 学習に用いる学習用データ中のユーザーと映画の組を取得する
         train_keys = dataset.train[["user_id", "movie_id"]]
